@@ -1,0 +1,5 @@
+
+property_server=192.168.1.1
+server_addr=192.168.1.1
+point_name=Sales Point
+organization=Company Name
