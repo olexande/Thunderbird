@@ -55,6 +55,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/one.jsp</welcome-file>
+        <welcome-file>faces/signature.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
