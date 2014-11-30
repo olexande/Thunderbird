@@ -35,33 +35,89 @@ public class SignatureGenerator extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
+            
             String login  = request.getParameter("login");
             String posada = request.getParameter("posada");
             String city   = request.getParameter("city");
-//            String point  = request.getParameter("point");
+            String point  = request.getParameter("point");
             String pfone  = request.getParameter("pfone");
             String region = request.getParameter("Region");
 //            String login = request.getParameter("point");
             
-            out.println(login); 
-            out.println("<br/>");
-            out.println(posada); 
-            out.println("<br/>");
-            out.println(city); 
-            out.println("<br/>");
-            out.println(pfone); 
-            out.println("<br/>");
+            String head1 = ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
+            String head2 = ("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
+            String head3 = ("<head>");
+            String head4 = ("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />");
+            String head5 = ("<title>Signature</title>");
+            String head6 = ("<style type=\"text/css\">");
+            String head7 = (".font-blue {\n" + "	color: #00F;\n" + "}");
+            String head8 = ("</style>");
+            String head9 = ("</head>");
+            
+            String body1 = ("<body>");
+            String body2 = ("<p><img src=\"../../../../company-logo.jpg\" alt=\"company-logo\" width=\"60\" height=\"82\" /> <br />");
+            String body3 = ("  <span class=\"font-blue\"><strong><em>З Повагою,</em></strong> <br />");
+            String body4 = ("  <strong><em>" + login +"</em></strong>,<br />");
+            String body5 = ("  <strong><em>" + posada +"</em></strong><br />");
+            String body6 = ("  <strong><em>м. " + city +"<br />");
+            String body7 = ("    " + point +"<br />");
+            String body8 = ("    моб. тел. " + pfone +"</em></strong></span></p>");
+            String body9 = ("</body>");
+            String body10 = ("</html>");
+            
+            
+
+            
+            out.println(head1);
+            out.println(head2);
+            out.println(head3);
+            out.println(head4);
+            out.println(head5);
+            out.println(head6);
+            out.println(head7);
+            out.println(head8);
+            out.println(head9);
+//            out.println(head2);
+            
+            out.println(body1);
+            out.println(body2);
+            out.println(body3);
+            out.println(body4);
+            out.println(body5);
+            out.println(body6);
+            out.println(body7);
+            out.println(body8);
+            out.println(body9);
+            out.println(body10);
+            
+//            out.println(login); 
+//            out.println("<br/>");
+//            out.println(posada); 
+//            out.println("<br/>");
+//            out.println(city); 
+//            out.println("<br/>");
+//            out.println(pfone); 
+//            out.println("<br/>");
 //            out.println(point);
 //            out.println("<br/>");
+            out.println("Debug:");
+            out.println("<br/>");
+            out.println("Skript planiruetsia pologity v ... ");
             out.println(region);
             out.println("<br/>");
 
             
            /// out.println(property);
                  //out.println("just the text"); 
-                 out.println("try " + login);
+//                 out.println("try " + login);
                   
 //                 out.println("  ");  
+            
+            
+            
+            
+            
+            
 
         } finally {
             out.close();

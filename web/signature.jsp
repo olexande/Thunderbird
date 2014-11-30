@@ -18,7 +18,7 @@
             Введите login       : <input type="text" name="login" /><br/>
             Введите должность   : <input type="text" name="posada" />  <br/>
             Введите город       : <input type="text" name="city" /> <br/>
-            <%--Адрес пункта        : <input type="text" name="point" /> <br/> --%>
+            Адрес пункта        : <input type="text" name="point" /> <br/>
             Введите телефон     : <input type="text" name="pfone" /><br/>
             <br/>
             <select name="Region">
