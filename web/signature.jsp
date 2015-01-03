@@ -15,11 +15,14 @@
         <h1>Hello SignatureGenerator!</h1>
         
         <form action="SignatureGenerator" method="GET">
-            Введите login       : <input type="text" name="login" /><br/>
-            Введите должность   : <input type="text" name="posada" />  <br/>
-            Введите город       : <input type="text" name="city" /> <br/>
-            Адрес пункта        : <input type="text" name="point" /> <br/>
-            Введите телефон     : <input type="text" name="pfone" /><br/>
+            <table border="0" cellspacing="0" cellpadding="0">
+			
+            <tr><td>Введите login: </td><td><input type="text" name="login" /></td></tr>
+            <tr><td>Введите должность: </td><td><input type="text" name="posada" />  </td></tr>
+            <tr><td>Введите город: </td><td><input type="text" name="city" /> </td></tr>
+            <tr><td>Адрес пункта: </td><td><input type="text" name="point" /> </td></tr>
+            <tr><td>Введите телефон: </td><td><input type="text" name="pfone" /></td></tr>
+            </table>   
             <br/>
             <select name="Region">
                 <option>
