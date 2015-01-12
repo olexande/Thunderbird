@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -35,8 +38,10 @@ public class SignatureGenerator extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
+            Sotrudnik aSotrudnik = new Sotrudnik();
             
             String login  = request.getParameter("login");
+//            aSotrudnik.setLogin(login);
             String posada = request.getParameter("posada");
             String city   = request.getParameter("city");
             String point  = request.getParameter("point");
@@ -44,15 +49,7 @@ public class SignatureGenerator extends HttpServlet {
             String region = request.getParameter("Region");
 //            String login = request.getParameter("point");
             
-            String head1 = ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
-            String head2 = ("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
-            String head3 = ("<head>");
-            String head4 = ("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />");
-            String head5 = ("<title>Signature</title>");
-            String head6 = ("<style type=\"text/css\">");
-            String head7 = (".font-blue {\n" + "	color: #00F;\n" + "}");
-            String head8 = ("</style>");
-            String head9 = ("</head>");
+
             
             String body1 = ("<body>");
             String body2 = ("<p><img src=\"../../../../company-logo.jpg\" alt=\"company-logo\" width=\"60\" height=\"82\" /> <br />");
@@ -65,18 +62,24 @@ public class SignatureGenerator extends HttpServlet {
             String body9 = ("</body>");
             String body10 = ("</html>");
             
-            
+            List listProp = new LinkedList();      
+        
+            listProp = SignaturePropertyGenerator.updateSignatureProperty(listProp);
 
-            
-            out.println(head1);
-            out.println(head2);
-            out.println(head3);
-            out.println(head4);
-            out.println(head5);
-            out.println(head6);
-            out.println(head7);
-            out.println(head8);
-            out.println(head9);
+            Iterator iterator = listProp.iterator();
+            while(iterator.hasNext()){
+                String element = (String) iterator.next();
+                System.out.println(element);
+            }
+//            out.println(head1);
+//            out.println(head2);
+//            out.println(head3);
+//            out.println(head4);
+//            out.println(head5);
+//            out.println(head6);
+//            out.println(head7);
+//            out.println(head8);
+//            out.println(head9);
 //            out.println(head2);
             
             out.println(body1);
