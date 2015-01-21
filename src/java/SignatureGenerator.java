@@ -69,7 +69,7 @@ public class SignatureGenerator extends HttpServlet {
             Iterator iterator = listProp.iterator();
             while(iterator.hasNext()){
                 String element = (String) iterator.next();
-                System.out.println(element);
+                out.println(element);
             }
 //            out.println(head1);
 //            out.println(head2);
