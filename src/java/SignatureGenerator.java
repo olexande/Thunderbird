@@ -71,16 +71,6 @@ public class SignatureGenerator extends HttpServlet {
                 String element = (String) iterator.next();
                 out.println(element);
             }
-//            out.println(head1);
-//            out.println(head2);
-//            out.println(head3);
-//            out.println(head4);
-//            out.println(head5);
-//            out.println(head6);
-//            out.println(head7);
-//            out.println(head8);
-//            out.println(head9);
-//            out.println(head2);
             
             out.println(body1);
             out.println(body2);
@@ -93,16 +83,6 @@ public class SignatureGenerator extends HttpServlet {
             out.println(body9);
             out.println(body10);
             
-//            out.println(login); 
-//            out.println("<br/>");
-//            out.println(posada); 
-//            out.println("<br/>");
-//            out.println(city); 
-//            out.println("<br/>");
-//            out.println(pfone); 
-//            out.println("<br/>");
-//            out.println(point);
-//            out.println("<br/>");
             out.println("Debug:");
             out.println("<br/>");
             out.println("Skript planiruetsia pologity v ... ");
