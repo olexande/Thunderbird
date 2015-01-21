@@ -18,6 +18,7 @@
             <table border="0" cellspacing="0" cellpadding="0">
 			
             <tr><td>Введите login: </td><td><input type="text" name="login" /></td></tr>
+            <tr><td>Введите FullName: </td><td><input type="text" name="fullName" /></td></tr>
             <tr><td>Введите должность: </td><td><input type="text" name="posada" />  </td></tr>
             <tr><td>Введите город: </td><td><input type="text" name="city" /> </td></tr>
             <tr><td>Адрес пункта: </td><td><input type="text" name="point" /> </td></tr>

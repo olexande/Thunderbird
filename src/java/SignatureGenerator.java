@@ -36,35 +36,29 @@ public class SignatureGenerator extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
+        try (PrintWriter out = response.getWriter()) {
+            
+            // Установка полученных от пользователя параметров ...
             Sotrudnik aSotrudnik = new Sotrudnik();
             
             String login  = request.getParameter("login");
-//            aSotrudnik.setLogin(login);
+            aSotrudnik.setLogin(login);
+            String fullName  = request.getParameter("fullName");
+            aSotrudnik.setFullName(fullName);
             String posada = request.getParameter("posada");
+            aSotrudnik.setPosada(posada);
             String city   = request.getParameter("city");
+            aSotrudnik.setCity(city);
             String point  = request.getParameter("point");
+            aSotrudnik.setPoint(point);
             String pfone  = request.getParameter("pfone");
+            aSotrudnik.setPfone(pfone);
             String region = request.getParameter("Region");
-//            String login = request.getParameter("point");
-            
-
-            
-            String body1 = ("<body>");
-            String body2 = ("<p><img src=\"../../../../company-logo.jpg\" alt=\"company-logo\" width=\"60\" height=\"82\" /> <br />");
-            String body3 = ("  <span class=\"font-blue\"><strong><em>З Повагою,</em></strong> <br />");
-            String body4 = ("  <strong><em>" + login +"</em></strong>,<br />");
-            String body5 = ("  <strong><em>" + posada +"</em></strong><br />");
-            String body6 = ("  <strong><em>м. " + city +"<br />");
-            String body7 = ("    " + point +"<br />");
-            String body8 = ("    моб. тел. " + pfone +"</em></strong></span></p>");
-            String body9 = ("</body>");
-            String body10 = ("</html>");
+            aSotrudnik.setRegion(region);
             
             List listProp = new LinkedList();      
         
-            listProp = SignaturePropertyGenerator.updateSignatureProperty(listProp);
+            listProp = SignaturePropertyGenerator.updateSignatureProperty(listProp, aSotrudnik);
 
             Iterator iterator = listProp.iterator();
             while(iterator.hasNext()){
@@ -72,22 +66,11 @@ public class SignatureGenerator extends HttpServlet {
                 out.println(element);
             }
             
-            out.println(body1);
-            out.println(body2);
-            out.println(body3);
-            out.println(body4);
-            out.println(body5);
-            out.println(body6);
-            out.println(body7);
-            out.println(body8);
-            out.println(body9);
-            out.println(body10);
-            
-            out.println("Debug:");
-            out.println("<br/>");
-            out.println("Skript planiruetsia pologity v ... ");
-            out.println(region);
-            out.println("<br/>");
+//            out.println("Debug:");
+//            out.println("<br/>");
+//            out.println("Skript planiruetsia pologity v ... ");
+//            out.println(region);
+//            out.println("<br/>");
 
             
            /// out.println(property);
@@ -95,15 +78,7 @@ public class SignatureGenerator extends HttpServlet {
 //                 out.println("try " + login);
                   
 //                 out.println("  ");  
-            
-            
-            
-            
-            
-            
 
-        } finally {
-            out.close();
         }
     }
 
