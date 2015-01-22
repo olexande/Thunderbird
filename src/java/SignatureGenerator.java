@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,7 +37,7 @@ public class SignatureGenerator extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try (PrintWriter pout = response.getWriter()) {
             
             // Установка полученных от пользователя параметров ...
             Sotrudnik aSotrudnik = new Sotrudnik();
@@ -63,9 +64,25 @@ public class SignatureGenerator extends HttpServlet {
             Iterator iterator = listProp.iterator();
             while(iterator.hasNext()){
                 String element = (String) iterator.next();
-                out.println(element);
+                pout.println(element);
             }
             
+            File file = new File(login + ".html");
+            if (file.exists()) {
+//                out.println("file is true");
+            }
+            else{
+                file.createNewFile();
+                FileWriter fout = new FileWriter(file);
+                Iterator iterator2 = listProp.iterator();
+                while(iterator2.hasNext()){
+                    String element = (String) iterator2.next();
+                    fout.append(element);
+                }
+                fout.flush();
+                fout.close();
+            }
+                    
 //            out.println("Debug:");
 //            out.println("<br/>");
 //            out.println("Skript planiruetsia pologity v ... ");
