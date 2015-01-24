@@ -69,7 +69,10 @@ public class SignatureGenerator extends HttpServlet {
             
             File file = new File(login + ".html");
             if (file.exists()) {
-//                out.println("file is true");
+//               TODO: write add logics
+//               TODO: разобраться как работает при наличии файла
+//               TODO: Будет очень актуальни на момент "перезаписи подписи и конфига"
+                         
             }
             else{
                 file.createNewFile();
@@ -83,19 +86,6 @@ public class SignatureGenerator extends HttpServlet {
                 fout.close();
             }
                     
-//            out.println("Debug:");
-//            out.println("<br/>");
-//            out.println("Skript planiruetsia pologity v ... ");
-//            out.println(region);
-//            out.println("<br/>");
-
-            
-           /// out.println(property);
-                 //out.println("just the text"); 
-//                 out.println("try " + login);
-                  
-//                 out.println("  ");  
-
         }
     }
 
